@@ -12,6 +12,10 @@ Then... what updated in DiscordGuess (Remastered)?
 4. Added log file. (Helps if your PC is running 24/7 to guess)
 5. And small fixes.
 
+## Usage
+- pip install -r requirements.txt
+- python3 discordguess.py
+
 ## Notes
 * You will need your Token to be able to send valid requests.
 * Discord has a 10 requests/minute rate limit on the Add Friend function. Rate limiting delays are implemented, but use a 15 second delay to avoid suspicion.

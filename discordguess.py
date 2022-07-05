@@ -82,7 +82,7 @@ while i<1000:
             print(Fore.LIGHTGREEN_EX + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban' + Fore.RESET)
             logger.info('[' + str(i) + '] ' + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban')
             print('Discord Tag: ', Fore.LIGHTBLUE_EX + req['username'], '#', i, sep = '' + Fore.RESET)
-            super_logger.info(i)
+            super_logger.info(str(i))
             found = True
         elif r.status_code == 400: # Incorrect Discriminator
             print('Incorrect')
@@ -92,7 +92,7 @@ while i<1000:
             i -= 1
             p = (json.loads(r.text)['retry_after'])/1000
             print(Fore.MAGENTA + 'Rate limit: retrying after', p, 'seconds.' + Fore.RESET)
-            logger.warning('[' + i + '] ' + 'Rate limit: retrying after ' + p + ' seconds.')
+            logger.warning('[' + str(i) + '] ' + 'Rate limit: retrying after ' + p + ' seconds.')
             normalSleep = False
             sleep(p)
         elif r.status_code == 401: # Invalid token

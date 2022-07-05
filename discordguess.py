@@ -1,6 +1,7 @@
 import requests
 import json
 import logging
+import time
 from time import sleep
 from colorama import init, Fore
 
@@ -55,8 +56,10 @@ def setup_logger(name, log_file, level=logging.INFO):
     return logger
 
 # Logging
+named_tuple = time.localtime() # Time
+time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple) # Time
 logger = setup_logger('log', 'log.txt')
-logger.info('New session started')
+logger.info('New session started - ' + time_string)
 logger.info('Username: ' + req['username'])
 logger.info('Total Number: ' + str(totalnumber))
 logger.info('Delay: ' + str(delay))

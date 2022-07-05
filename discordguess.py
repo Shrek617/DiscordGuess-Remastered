@@ -76,10 +76,10 @@ while i<1000:
     if match != True:
         r = s.post('https://discordapp.com/api/v6/users/@me/relationships', data = json.dumps(req), headers = headers)
         if r.status_code == 204:   # Friend Request sent
-            print(Fore.LIGHTGREEN_EX + 'Success! Now im ignoring this Discord Tag to prevent ban.' + Fore.RESET)
-            logging.info('[', i, ']', 'Success!')
+            print(Fore.LIGHTGREEN_EX + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban' + Fore.RESET)
+            logging.info('[', i, ']', 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban')
             print('Discord Tag: ', Fore.LIGHTBLUE_EX + req['username'], '#', i, sep = '' + Fore.RESET)
-            super_logging.info('[', i, ']', 'Success! Now im ignoring this Discord Tag to prevent ban. !!! DONT DELETE OR REDACTING THIS FILE TO PREVENT BAN !!!')
+            super_logging.info(i)
             found = True
         elif r.status_code == 400: # Incorrect Discriminator
             print('Incorrect')

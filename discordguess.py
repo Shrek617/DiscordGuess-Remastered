@@ -19,7 +19,7 @@ print(Fore.LIGHTGREEN_EX + """
 
 token = input('Token: ')      # Discord Authorization Token
 delay = int(input('Delay [Rec. 15]: ')) # Seconds to wait between requests
-number = int(input('Number: ')) # Number to check of tags
+number = int(input('Number: ')) # Number to check tag
 totalnumber = number + 1
 print(Fore.LIGHTGREEN_EX + str(number) + '+' + '1' + '=' + str(totalnumber) + ' ' + '(Total Number)' + Fore.RESET)
 req = {}

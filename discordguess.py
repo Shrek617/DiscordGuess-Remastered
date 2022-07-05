@@ -57,6 +57,9 @@ def setup_logger(name, log_file, level=logging.INFO):
 # Logging
 logger = setup_logger('log', 'log.txt')
 logger.info('New session started')
+logger.info('Username: ' + req['username'])
+logger.info('Total Number: ' + str(totalnumber))
+logger.info('Delay: ' + str(delay))
 super_logger = setup_logger(req['username'], req['username'] + '.txt')
 
 # Start bruteforce

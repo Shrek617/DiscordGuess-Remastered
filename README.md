@@ -10,7 +10,7 @@ Then... what updated in DiscordGuess (Remastered)?
 2. Added number to start without waiting for number when already checked.
 3. Changed recommend delay from 10 second to 15 second.
 4. Added log file. (Helps if your PC is running 24/7 to guess)
-5. And small fixes.
+5. And small fixes... and more!
 
 ## Usage
 - pip install -r requirements.txt

@@ -7,7 +7,8 @@ Then... what updated in DiscordGuess (Remastered)?
 1. Prevent ban (adding success list log in format USERNAME.txt) because two friend request sent = ban.
 2. Added number to start without waiting for number when already checked.
 3. Changed recommend delay from 10 second to 15 second.
-4. And small fixes.
+4. Added log file.
+5. And small fixes.
 
 ## Notes
 * You will need your Token to be able to send valid requests.

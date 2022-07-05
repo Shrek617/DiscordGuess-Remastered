@@ -4,7 +4,7 @@
 This tool allows you to guess the Discriminator of Discord accounts (the numbers at the end) based on their Username. It uses the "Add Friend" feature to test for valid Discord Tags.
 
 Then... what updated in DiscordGuess (Remastered)?
-1. Prevent ban (adding success list) because two friend request sent = ban.
+1. Prevent ban (adding success list log in format USERNAME.txt) because two friend request sent = ban.
 2. Added number to start without waiting for number when already checked.
 3. Changed recommend delay from 10 second to 15 second.
 4. And small fixes.

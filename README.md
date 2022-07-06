@@ -1,7 +1,7 @@
 ﻿## DiscordGuess Remastered
  Meet, DiscordGuess Remastered!
 
-⚠️ Highly recommended to start guess from the second account (twink) ⚠️
+⚠️ Highly recommended to start guess from the second account (alt) ⚠️
 
 This tool allows you to guess the Discriminator of Discord accounts (the numbers at the end) based on their Username. It uses the "Add Friend" feature to test for valid Discord Tags.
 

@@ -71,7 +71,7 @@ i = number
 while i<9999:
     normalSleep = True
     i += 1
-    print('[',i,'] ', sep = '', end = '')
+    print('[',req['username'],'#',i,'] ', sep = '', end = '')
     req['discriminator'] = i
     check = str(i)
     with open(req['username'] + '.txt') as f:
@@ -83,28 +83,28 @@ while i<9999:
         r = s.post('https://discordapp.com/api/v6/users/@me/relationships', data = json.dumps(req), headers = headers)
         if r.status_code == 204:   # Friend Request sent
             print(Fore.LIGHTGREEN_EX + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban' + Fore.RESET)
-            logger.info('[' + str(i) + '] ' + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban')
+            logger.info('[' + req['username'] + '#' + str(i) + '] ' + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban')
             print('Discord Tag: ', Fore.LIGHTBLUE_EX + req['username'], '#', i, sep = '' + Fore.RESET)
             super_logger.info(str(i))
             found = True
         elif r.status_code == 400: # Incorrect Discriminator
             print('Incorrect')
             print(Fore.LIGHTRED_EX + 'This Discord Tag doesn\'t exist.' + Fore.RESET)
-            logger.info('[' + str(i) + '] ' + 'Incorrect')
+            logger.info('[' + req['username'] + '#' + str(i) + '] ' + 'Incorrect')
         elif r.status_code == 429: # Rate Limit
             i -= 1
             p = (json.loads(r.text)['retry_after'])/1000
             print(Fore.MAGENTA + 'Rate limit: retrying after', p, 'seconds.' + Fore.RESET)
-            logger.warning('[' + str(i) + '] ' + 'Rate limit: retrying after ' + p + ' seconds.')
+            logger.warning('[' + req['username'] + '#' + str(i) + '] ' + 'Rate limit: retrying after ' + p + ' seconds.')
             normalSleep = False
             sleep(p)
         elif r.status_code == 401: # Invalid token
             print(Fore.LIGHTRED_EX + 'Invalid Token!')
-            logger.error('[' + str(i) + '] ' + 'Invalid Token!')
+            logger.error('[' + req['username'] + '#' + str(i) + '] ' + 'Invalid Token!')
             break
         else:
             print('Unknown error', r.status_code,'-->',r.text)
-            logger.error('[' + str(i) + '] ' + 'Unknown error')
+            logger.error('[' + req['username'] + '#' + str(i) + '] ' + 'Unknown error')
     if normalSleep:
         sleep(delay)
 

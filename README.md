@@ -11,6 +11,7 @@ Then... what updated in DiscordGuess (Remastered)?
 3. Changed recommend delay from 10 second to 15 second.
 4. Added log file. (Helps if your PC is running 24/7 to guess)
 5. And small fixes... and more!
+6. Soon... Integration with Telegram (and may be Discord)
 
 ## Usage
 - pip install -r requirements.txt

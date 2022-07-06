@@ -68,7 +68,7 @@ super_logger = setup_logger(req['username'], req['username'] + '.txt')
 # Start bruteforce
 found = False
 i = number                              
-while i<1000:
+while i<9999:
     normalSleep = True
     i += 1
     print('[',i,'] ', sep = '', end = '')

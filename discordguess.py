@@ -79,6 +79,7 @@ while i<9999:
     if match == True: # Prevent Ban | Two friend request sent = ban
         print(Fore.LIGHTGREEN_EX + 'Ignoring because this Discord Tag in success list.' + Fore.RESET)
         print('Discord Tag: ', Fore.LIGHTBLUE_EX + req['username'], '#', i, sep = '' + Fore.RESET)
+        logger.info('[' + req['username'] + '#' + str(i) + '] ' + 'Ignoring because this Discord Tag in success list.')
     if match != True:
         r = s.post('https://discordapp.com/api/v6/users/@me/relationships', data = json.dumps(req), headers = headers)
         if r.status_code == 204:   # Friend Request sent

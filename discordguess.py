@@ -86,7 +86,7 @@ while i<9999:
             print(Fore.LIGHTGREEN_EX + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban' + Fore.RESET)
             logger.info('[' + req['username'] + '#' + str(i) + '] ' + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban')
             print('Discord Tag: ', Fore.LIGHTBLUE_EX + req['username'], '#', i, sep = '' + Fore.RESET)
-            super_logger.info(str(i))
+            super_logger.info('\n\r' + str(i))
             found = True
         elif r.status_code == 400: # Incorrect Discriminator
             print('Incorrect')

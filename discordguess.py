@@ -93,13 +93,13 @@ time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple) # Time
 logger = setup_logger('log', 'log.txt')
 logger.info('New session started - ' + time_string)
 logger.info('Username: ' + req['username'])
-logger.info('Total Number: ' + str(number))
+logger.info('Number: ' + str(number))
 logger.info('Delay: ' + str(delay))
 if telegram_enable == "true": # Telegram
     if send_log_session_output == "true":
         telegram_bot_sendtext("New session started - " + time_string)
         telegram_bot_sendtext("Username: " + req['username'])
-        telegram_bot_sendtext("Total Number: " + str(number))
+        telegram_bot_sendtext("Number: " + str(number))
         telegram_bot_sendtext("Delay: " + str(delay))
 super_logger = setup_logger(req['username'], req['username'] + '.txt')
 empty_log_write = req['username'] + '.txt'

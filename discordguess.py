@@ -21,8 +21,6 @@ print(Fore.LIGHTGREEN_EX + """
 token = input('Token: ')      # Discord Authorization Token
 delay = int(input('Delay [Rec. 15]: ')) # Seconds to wait between requests
 number = int(input('Number: ')) # Number to check tag
-totalnumber = number + 1
-print(Fore.LIGHTGREEN_EX + str(number) + '+' + '1' + '=' + str(totalnumber) + ' ' + '(Total Number)' + Fore.RESET)
 req = {}
 req['username'] = input('Username: ') # Username to guess
 token = token.replace('"', '')
@@ -61,7 +59,7 @@ time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple) # Time
 logger = setup_logger('log', 'log.txt')
 logger.info('New session started - ' + time_string)
 logger.info('Username: ' + req['username'])
-logger.info('Total Number: ' + str(totalnumber))
+logger.info('Number: ' + str(number))
 logger.info('Delay: ' + str(delay))
 super_logger = setup_logger(req['username'], req['username'] + '.txt')
 empty_log_write = req['username'] + '.txt'
@@ -74,7 +72,7 @@ def empty_line(empty_log_write):
 
 # Start bruteforce
 found = False
-i = number                              
+i = number - 1   
 while i<9999:
     normalSleep = True
     i += 1

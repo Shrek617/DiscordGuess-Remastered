@@ -1,0 +1,10 @@
+{
+    "telegram_enable": "false",
+    "bot_token": "PLACE_HERE_TOKEN",
+    "bot_chatID": "PLACE_HERE_CHAT_ID",
+    "send_success" : "true",
+    "send_incorrect": "true",
+    "send_warning": "true",
+    "send_error": "true",
+    "send_log_session_output": "true"
+}

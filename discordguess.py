@@ -22,7 +22,7 @@ print(Fore.LIGHTGREEN_EX + """
 
 token = input('Token: ')      # Discord Authorization Token
 delay = int(input('Delay [Rec. 15]: ')) # Seconds to wait between requests
-number = int(input('Number: ')) # Number to check tag
+number = int(input('Number [1]: ')) # Number to check tag
 req = {}
 req['username'] = input('Username: ') # Username to guess
 token = token.replace('"', '')

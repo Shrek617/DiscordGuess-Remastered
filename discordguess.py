@@ -66,6 +66,10 @@ send_incorrect = cread["send_incorrect"]
 send_warning = cread["send_warning"]
 send_error = cread["send_error"]
 send_log_session_output = cread["send_log_session_output"] # etc. Username, Delay
+if telegram_enable == True or telegram_enable == "true":
+    print(Fore.LIGHTGREEN_EX + "Integration with Telegram - enabled." + Fore.RESET)
+elif telegram_enable != True or telegram_enable != "true":
+    print(Fore.LIGHTRED_EX + "Integration with Telegram - disabled." + Fore.RESET)
 
 # Telegram integration
 def telegram_bot_sendtext(bot_message):

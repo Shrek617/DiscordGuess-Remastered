@@ -20,4 +20,4 @@ Then... what updated in DiscordGuess (Remastered)?
 ## Notes
 * You will need your Token to be able to send valid requests.
 * Discord has a 10 requests/minute rate limit on the Add Friend function. Rate limiting delays are implemented, but use a 15 second delay to avoid suspicion.
-* You can take a look at [terminology](https://github.com/Shrek617/DiscordGuess-Remastered/terminology.md).
+* You can take a look at [terminology](https://github.com/Shrek617/DiscordGuess-Remastered/blob/master/terminology.md).

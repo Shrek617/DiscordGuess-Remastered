@@ -27,19 +27,19 @@ req = {}
 req['username'] = input('Username: ') # Username to guess
 token = token.replace('"', '')
 
-headers = { 'Host':             'discordapp.com',
-            'User-Agent':       'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0',
+headers = { 'Host':             'discord.com',
+            'User-Agent':       'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0',
             'Accept':           '*/*',
             'Accept-Language':  'en-GB',
             'Accept-Encoding':  'gzip, deflate, br',
             'Content-Type':     'application/json',
             'Authorization':    token,
             'Connection':       'keep-alive',
-            'Referer':          'https://discordapp.com/channels/@me'}
+            'Referer':          'https://discord.com/channels/@me'}
 
 # Grab necessary cookies
 s = requests.Session()
-s.get('https://discordapp.com/channels/@me')
+s.get('https://discord.com/channels/@me')
 print('Cookies -->', s.cookies.get_dict())
 print()
 
@@ -133,7 +133,7 @@ while i<9999:
             if send_success == "true" or send_success == True:
                 telegram_bot_sendtext("\\[" + req['username'] + "%23" + str(i) + "] " + "Ignoring because this Discord Tag in success list.")
     if match != True:
-        r = s.post('https://discordapp.com/api/v6/users/@me/relationships', data = json.dumps(req), headers = headers)
+        r = s.post('https://discord.com/api/v6/users/@me/relationships', data = json.dumps(req), headers = headers)
         if r.status_code == 204:   # Friend Request sent
             print(Fore.LIGHTGREEN_EX + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban' + Fore.RESET)
             logger.info('[' + req['username'] + '#' + str(i) + '] ' + 'Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting ' + req['username'] + '.txt ' + 'file to prevent ban')
@@ -143,6 +143,15 @@ while i<9999:
             if telegram_enable == "true" or telegram_enable == True: # Telegram
                 if send_success == "true" or send_success == True:
                     telegram_bot_sendtext("\\[" + req['username'] + "%23" + str(i) + "] " + "Success! Now im ignoring this Discord Tag to prevent ban. Dont delete or redacting " + req['username'] + ".txt " + "file to prevent ban")
+            print(Fore.LIGHTGREEN_EX + 'Please, retry in 5 minutes to prevent ban.' + Fore.RESET)
+            print('Waiting 5 minutes... Dont close program!')
+            logger.info('[' + req['username'] + '#' + str(i) + '] ' + 'Please, retry in 5 minutes to prevent ban.')
+            logger.info('[' + req['username'] + '#' + str(i) + '] ' + 'Waiting 5 minutes... Dont close program!')
+            if telegram_enable == "true" or telegram_enable == True: # Telegram
+                if send_success == "true" or send_success == True:
+                    telegram_bot_sendtext("\\[" + req['username'] + "%23" + str(i) + "] " + "Please, retry in 5 minutes to prevent ban.")
+                    telegram_bot_sendtext("\\[" + req['username'] + "%23" + str(i) + "] " + "Waiting 5 minutes... Dont close program!")
+            sleep(300)
             found = True
         elif r.status_code == 400: # Incorrect Discriminator
             print('Incorrect')
